@@ -95,6 +95,8 @@ export class HomeComponent implements OnInit {
       this.personService.savePerson(this.newPerson).subscribe(
         () => {
           console.log('User saved successfully');
+          this.fetchPersons(); // Fetch the updated list of persons after saving
+
           // Reset the newPerson object for next registration
           this.newPerson = {
             id:0,
